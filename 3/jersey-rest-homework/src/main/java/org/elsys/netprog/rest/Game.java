@@ -89,8 +89,6 @@ public class Game {
 		for(int i=0;i < guessArr.length;i++) {
 			for(int b=0;b< secretArr.length;b++) {
 				if(guessArr[i] == secretArr[b] && i!=b) {
-					System.out.println(guessArr[i]);
-					System.out.println(secretArr[b]);
 					cows++;
 				}
 			}
