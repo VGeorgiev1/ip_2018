@@ -7,12 +7,12 @@ regExps = {
 "exercise_6": /class=('|")[A-z\s]+('|")/
 };
 cssSelectors = {
-"exercise_1": "[name='3-2']",
+"exercise_1": "item > java",
 "exercise_2": ".diffClass",
-"exercise_3": "[name='3-2-3']",
-"exercise_4": "[name='3']",
-"exercise_5": "[name='1-1-2']",
+"exercise_3": "java > tag",
+"exercise_4": "css > item:nth-child(3)",
+"exercise_5": "tag > java.class1:nth-child(2)",
 "exercise_6": "item.class2 > item, item.class1 > item",
-"exercise_7": "[name='4-2-2']",
-"exercise_8": "[name='2']"
+"exercise_7": "#diffId2 > java:nth-child(2)",
+"exercise_8": "#someId"
 };
