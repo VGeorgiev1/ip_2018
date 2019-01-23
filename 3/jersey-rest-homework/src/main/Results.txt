@@ -1,0 +1,9 @@
+Average time for 1 byte long input was 0.002 seconds
+Average h/sec : 116800.0
+
+Average time for 2 byte long input was 0.065 seconds
+Average h/sec : 1406344.6153846153
+
+
+Average time for 3 byte long input was 14.287 seconds
+Average h/sec : 1768673.6753692168

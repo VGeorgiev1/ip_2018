@@ -37,21 +37,22 @@ import org.elsys.netprog.rest.*;
 
 @Path("/")
 public class Crypto {
-	public static int lenght = 2;
+	public static int lenght = 4;
 	public static byte[] input = new byte[lenght];
 	public static String hash;
 	@POST
-	@Path("/guess/{guess}")
+	@Path("/guess/{guess}/hash/{hash}")
 	@Produces(value={MediaType.APPLICATION_JSON})
-	public Response guess(@PathParam("guess") String guessStr) throws NoSuchAlgorithmException{
-		String decoded = new String(Base64.getDecoder().decode(guessStr.getBytes()));
-		
+	public Response guess(@PathParam("guess") String guessStr, @PathParam("hash")String hash)  throws NoSuchAlgorithmException{
+		byte[] decodedGuess = Base64.getDecoder().decode(guessStr.getBytes());
+		String decodeHash = new String(Base64.getDecoder().decode(hash.getBytes()));
 		if(hash == null) {
 			return Response.ok("Generate a hash first!").build();
 		}
-		if(hash.equals(generateHash(decoded.getBytes()))) {
+		if(Arrays.equals(input, decodedGuess) && this.hash.equals(decodeHash)) {
 			return Response.ok().build();
 		}
+		System.out.println(this.hash.equals(hash));
 		return Response.status(406).build();
 	}
 	private String generateHash(byte[] in) throws NoSuchAlgorithmException {
