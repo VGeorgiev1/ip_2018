@@ -44,7 +44,7 @@ public class Crypto {
 	@Path("/guess/{guess}")
 	@Produces(value={MediaType.APPLICATION_JSON})
 	public Response guess(@PathParam("guess") String guessStr) throws NoSuchAlgorithmException{
-		String decoded = new String(Base64.getDecoder().decode(guessStr.getBytes()));
+		String decoded = new String(Base64.getUrlDecoder().decode(guessStr.getBytes()));
 		
 		if(hash == null) {
 			return Response.ok("Generate a hash first!").build();
